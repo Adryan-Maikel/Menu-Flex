@@ -8,8 +8,21 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(45deg, deeppink, aqua);
+    background: linear-gradient(-45deg, pink, deeppink, blue, cyan);
+    height: 100vh;
+    background-size: 400% 400%;
+    animation: transition 15s ease infinite;
+}
+@keyframes transition{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
 }
 .navegation{
     position: relative;
@@ -90,13 +103,13 @@ body{
     visibility: hidden;
     transform: translateY(0px);
     transition: 0.25s;
-    transition-delay: calc(0s + var(--i));
+    transition-delay: calc(0s + 0.1s);
 }
 .menuToggle.active ~ .menu ul li{
     opacity: 1;
     visibility: visible;
     transform: translateY(0px);
-    transition-delay: calc(0.5s + var(--i));
+    transition-delay: calc(0.5s + 0.1s);
 }
 .menu ul li a{
     display: block;
